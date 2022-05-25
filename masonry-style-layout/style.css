@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400&display=swap");
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  line-height: 1.5;
+  font-family: "Comfortaa", sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  background-color: aliceblue;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  align-items: center;
+}
+
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 250px;
+  gap: 30px;
+}
+
+main div {
+  overflow: hidden;
+  background-color: aliceblue;
+  border-radius: 6px;
+  border: 16px solid #ddd;
+}
+
+main img {
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main .short {
+  grid-row: span 1;
+}
+
+main .tall {
+  grid-row: span 2;
+}
+
+@media (max-width: 980px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 660px) {
+  main {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 400px;
+  }
+  nav {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  nav h1 {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+  }
+}
